@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #container {
+            width: 100%;
+
+        }
+        #container > div {
+            width: 800px;
+            margin: 0 auto;
+            border: 1px solid red
+        }
+        #container li {
+            margin: 20px;
+            border: 1px solid #e7e7e3;
+            padding: 15px;
+
+        }
+        #container li > div {
+            float: left
+        }
+        #container li > p {
+            width: 400px;
+            height: 100px;
+            margin-left: 320px;
+           line-height: 150px;
+            border-bottom:1px solid #e7e7e3;
+        }
+        #container img {
+            width: 300px;
+        }
+        #btn {
+            margin: 10px
+        }
+    </style>
+</head>
+<body>
+<div id="container" ng-controller="Ctrl">
+    <div>
+        <ul >
+            <li ng-repeat="(index,value) in data track by index" >
+                <div >
+                    <img ng-src="{{value.bg}}" alt="">
+                </div>
+                <p ng-bind="value.name"></p>
+                <p ng-bind="value.price"></p>
+            </li>
+        </ul>
+        <button id="btn" ng-click="add()">加载更多</button>
+    </div>
+</div>
+<script src="angular.js"></script>
+<script>
+    var app = angular.module('app',['ng']);
+    var arr = [
+        {
+            bg:'images/l7.jpg',
+            name:'狗',
+            price:'30'
+        },
+        {
+            bg:'images/l10.jpg',
+            name:'草',
+            price:'30'
+        },
+        {
+            bg:'images/l11.jpg',
+            name:'海',
+            price:'30'
+        },
+
+    ];
+    app.controller('Ctrl',function($scope){
+        $scope.data = [
+            {
+                bg:'images/l7.jpg',
+                name:'狗',
+                price:'30'
+            },
+            {
+                bg:'images/l10.jpg',
+                name:'草',
+                price:'30'
+            },
+            {
+                bg:'images/l11.jpg',
+                name:'海',
+                price:'30'
+            },
+
+        ];
+        $scope.add = function () {
+            this.data.push(arr[Math.floor(Math.random()*3)]);
+            this.data.push(arr[Math.floor(Math.random()*3)]);
+        }
+    })
+</script>
+</body>
+</html>
