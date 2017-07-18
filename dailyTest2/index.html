@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div ng-controller="control">
+    <input type="button" value="添加" ng-click="add()" >
+    <table>
+        <thead>
+            <th>单价</th>
+            <th>数量</th>
+            <th>总价</th>
+            <th>删除</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="(index,value) in gou track by index">
+                <td ng-bind="value.price"></td>
+                <td ng-bind="value.num"></td>
+                <td ng-bind="value.total"></td>
+                <td ><input type="button" value="删除" ng-click="remove(index)"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script src="angular.js"></script>
+<script>
+    var arr = [
+        {
+            price: 3,
+            num: 2,
+            total: 10,
+        },
+        {
+            price: 2,
+            num: 5,
+            total: 20,
+        },
+        {
+            price: 4,
+            num: 7,
+            total: 28,
+        },
+    ]
+    var app = angular.module('app',["ng"]);
+    app.controller('control',function($scope){
+        $scope.gou = [
+            {
+                price: 3,
+                num: 2,
+                total: 10,
+            },
+            {
+                price: 2,
+                num: 5,
+                total: 20,
+            },
+            {
+                price: 4,
+                num: 7,
+                total: 28,
+            },
+        ];
+        $scope.add = function(){
+            this.gou.push(arr[Math.floor(Math.random()*3)])
+        }
+        $scope.remove=function(i){
+            this.gou.splice(i,1)
+        }
+    })
+</script>
+</body>
+</html>
