@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div ng-controller="c">
+    <table>
+        <thead>
+            <th>请选择</th>
+            <th>姓名</th>
+            <th>生日</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="(index,value) in arr" >
+                <td><input type="checkbox" ng-model="value.isChecked" ng-click="change()" ng-checked="check" ></td>
+                <td ng-bind="value.name"></td>
+                <td ng-bind="value.birth"></td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <input type="checkbox" id="ck"  ng-checked="select" ng-model="check" ng-click="changeAll()"><label for="ck">全部/取消全选</label>
+    <br>
+    <input type="button" value="查看" ng-click="see()" >
+</div>
+
+
+<script src="angular.js"></script>
+<script>
+    var app = angular.module('app',['ng']);
+    app.controller('c',function($scope){
+        $scope.arr = [{name:'king','birth':'2016-05-01',isChecked:false},{name:'Golden','birth':'2016-05-04',isChecked:false}];
+        $scope.see = function(){
+
+            var str = ''
+            angular.forEach($scope.arr,function(value,index){
+                if(value.isChecked === true) {
+                    str+= value.name+ '被选中了'
+                }
+            })
+            if ( str==='' ) {
+                str = '都没被选中'
+            }
+            alert(str)
+        }
+        $scope.change = function(){
+            $scope.select = true;
+            angular.forEach($scope.arr,function(value,index){
+                $scope.select = $scope.select&&value.isChecked
+            })
+        }
+        $scope.changeAll = function () {
+            angular.forEach($scope.arr,function(value,index){
+                value.isChecked = $scope.check
+            })
+        }
+    })
+
+</script>
+</body>
+</html>
