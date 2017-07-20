@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div ng-controller="parent">
+    <div ng-view></div>
+</div>
+<script src="angular.js"></script>
+<script src="angular-route.js"></script>
+<script>
+    var app = angular.module('app',['ng','ngRoute']);
+    app.controller('c',['$scope','$location',function($scope,$location){
+
+    }]);
+    app.config(['$routeProvider',function($routeProvider){
+        $routeProvider.when('/start',{
+            templateUrl: './tpl1.html',
+            controller: 'c'
+        }).when('/register',{
+            templateUrl: './tpl2.html',
+            controller: 'c'
+        }).otherwise({redirectTo:'/start'})
+    }])
+    app.controller('parent',['$scope','$location',function($scope,$location){
+        $scope.turn = function(p){
+            $location.path(p)
+        }
+    }])
+</script>
+</body>
+</html>
