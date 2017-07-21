@@ -1,0 +1,14 @@
+<div id="header" ng-include="'tpl/include/header.html'"></div>
+<div id="order">
+    <div>
+        <p>收货人</p>
+        <input type="text" class="inp" ng-model="name">
+        <p>性别 <input type="radio" name="sex"><span>男</span><input type="radio" name="sex"><span>女</span></p>
+        <p >联系电话</p>
+        <input type="text" class="inp" ng-model="tel">
+        <p>收货地址</p>
+        <textarea name="text" id="" cols="30" rows="10" class="txtarea"></textarea>
+        <input type="button" value="提交订单" class="sub" ng-click="turn('/myorder/'+index+'/'+name+'/'+tel)">
+    </div>
+</div>
+<div id="footer" ng-include="'tpl/include/footer.html'"></div>

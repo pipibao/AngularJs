@@ -1,0 +1,28 @@
+<div id="header" ng-include="'tpl/include/header.html'"></div>
+<div id="myorder">
+    <div>
+        <h1>我的订单</h1>
+        <table>
+            <thead>
+                <th>编号</th>
+                <th>菜品</th>
+                <th>下单时间</th>
+                <th>联系人</th>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td ng-bind="data[index].id"></td>
+                    <td><img ng-src="{{data[index].bg}}" alt=""></td>
+                    <td ng-bind="time|date:'yyyy-MM-dd h:mm:ss EEEE'"></td>
+                    <td >
+                        <p ng-bind="name"></p>
+                        <br>
+                        <p ng-bind="'电话: '+tel"></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div id="footer" ng-include="'tpl/include/footer.html'"></div>

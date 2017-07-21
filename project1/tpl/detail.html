@@ -1,0 +1,22 @@
+<div id="header" ng-include="'tpl/include/header.html'"></div>
+<div id="detail">
+    <div class="nav">
+        <a href="#!/start">主页</a>/<span>详情</span>
+    </div>
+    <div class="dtl">
+        <h2 ng-bind="data[index].name"></h2>
+        <div>
+            <img ng-src="{{data[index].big}}" alt="">
+        </div>
+        <p>原材料</p>
+        <p>详情</p>
+    </div>
+    <div class="foot">
+        <div>
+            <input type="button" value="我要订餐" class="f_btn1" ng-click="turn('/order/'+index)">
+            <input type="button" value="我再看看" class="f_btn2" ng-click="turn('/main')">
+        </div>
+    </div>
+    <div class="add"></div>
+</div>
+<div id="footer" ng-include="'tpl/include/footer.html'"></div>

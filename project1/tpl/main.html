@@ -1,0 +1,16 @@
+<div id="header" ng-include="'tpl/include/header.html'"></div>
+<div id="main">
+    <input type="text" class="input" v-model="search">
+    <ul>
+        <li ng-repeat="(index,value) in data track by index " >
+            <div ng-click="turn('/detail/'+index)"><img ng-src="{{value.bg}}" alt=""></div>
+            <div class="detail" >
+                <h2 ng-bind="value.name"></h2>
+                <p ng-bind="value.des"></p>
+                <p ng-bind="'价格:'+value.price"></p>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div id="footer" ng-include="'tpl/include/footer.html'"></div>

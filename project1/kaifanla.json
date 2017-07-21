@@ -1,0 +1,66 @@
+[
+  {
+  "id":1,
+  "bg":"images/p0281.jpg",
+  "big":"images/p0281-l.jpg",
+  "name":"蒜蓉虾",
+  "des":"好吃",
+  "price": "￥36"
+  },
+  {
+    "id":2,
+    "bg":"images/p2679.jpg",
+    "big":"images/p2679-l.jpg",
+    "name":"蒸花卷",
+    "des":"详情",
+    "price": "￥16"
+  },
+  {
+    "id":3,
+    "bg":"images/p4788.jpg",
+    "big":"images/p4788-l.jpg",
+    "name":"意大利面",
+    "des":"详情",
+    "rice":"￥32"
+  },
+  {
+    "id":4,
+    "bg":"images/p6611.jpg",
+    "big":"images/p6611-l.jpg",
+    "name":"美味蒸饺",
+    "des":"详情",
+    "price": "￥20"
+  },
+  {
+    "id":5,
+    "bg":"images/p7818.jpg",
+    "big":"images/p7818-l.jpg",
+    "name":"油酥煎饼",
+    "des":"详情",
+    "price": "￥17"
+  },
+  {
+    "id":6,
+    "bg":"images/p7933.jpg",
+    "big":"images/p7933-l.jpg",
+    "name":"美味油条",
+    "des":"详情",
+    "price":"￥10"
+  },
+  {
+    "id":7,
+    "bg":"images/p8489.jpg",
+    "big":"images/p8489-l.jpg",
+    "name":"辣子鸡",
+    "des":"详情",
+    "price": "￥44"
+  },
+  {
+    "id":8,
+    "bg":"images/p9138.jpg",
+    "big":"images/p9138-l.jpg",
+    "name":"可口蛋糕",
+    "des":"详情",
+    "price": "￥22"
+  }
+]
